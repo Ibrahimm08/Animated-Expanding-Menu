@@ -1,4 +1,8 @@
 
+html{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 /* Background */
 .TopH{
     position: absolute;
@@ -31,9 +35,10 @@
     transform-origin: center;
     border: none;
     background-color: whitesmoke;
+    color: rgb(104, 104, 249);
     width: 40px; height: 40px;
     border-radius: 50%;
-    transition: 1s ease;
+    transition: 1s 0.4s ;
 } 
 
 /* Top line */
@@ -41,10 +46,9 @@
     position: absolute;
     content: "\268A";
     font-size: 40px;
-    transform-origin: bottom right center;
+    transform-origin:  center;
     top: -60%; right: 0; bottom: 0; left: 0;
-    transition: 1s ease;
-    /* animation: SpeenUpTop 1s infinite alternate ease 1s;  */
+    transition: 0.8s ease;
 }
 
 /* Bottom line */
@@ -52,23 +56,24 @@
     position: absolute;
     content: "\268A";
     font-size: 40px;
-    transform-origin: top left center;
+    transform-origin: center ;
     top: -30%; right: 0; bottom: 0; left: 0;
-    transition: 1s ease;
-    /* animation: SpeenDownLow 1s infinite alternate ease 1s; */
+    transition: 0.8s ease;
 }
 
 .btnActive{
     transform: translateX(80px);
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-delay: 1s;
 }
 .btnActive::before{
-    animation-delay: 2s;
     top: -30%; right: 35%;
+    transition-timing-function: cubic-bezier(0.975, -1.25, 0.9, 0.45);
     rotate: -45deg;
 }
 .btnActive::after{
-    animation-delay: 2s;
     top: -30%; right: -35%;
+    transition-timing-function: cubic-bezier(0.975, -1.25, 0.9, 0.45);
     rotate: 45deg;
 }
 
@@ -81,20 +86,38 @@
     background-color: whitesmoke;
     width: 40px; height: 40px;
     border-radius: 50%;
-    transition: 1s ease;
+    transition: 1s 0.8s;
 }
 .menu{
     border-radius: 5%;
     width: 200px;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transform: translateX(-80px);
 }
 
 .Links{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin-left: 2px;
+    transition: 1s ease;
+    
+}
+.Links a{
+    text-decoration: none;
     opacity: 0;
     transition: 1s ease;
+    color:  black;
 }
-.show{
+
+.Links a:nth-child(2){
+    transition-delay: 0.2s;
+}
+
+.Links a:nth-child(1){
+    transition-delay: 0.4s;
+}
+
+.show a{
     opacity: 1;
+}
+.show a :hover{
+    color: grey;
 }
